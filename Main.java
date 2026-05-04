@@ -17,7 +17,13 @@ public class Main {
             case "add": result = calc.add(a, b); break;
             case "sub": result = calc.subtract(a, b); break;
             case "mul": result = calc.multiply(a, b); break;
-            case "div": result = calc.divide(a, b); break;
+            case "div":
+    try {
+        result = calc.divide(a, b);
+    } catch (IllegalArgumentException e) {
+        System.out.println(e.getMessage());
+        return;
+    }
             default: System.out.println("Unknown operation"); return;
         }
 
